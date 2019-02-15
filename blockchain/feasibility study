@@ -1,0 +1,11 @@
+Project Description : 
+
+FRAMEWORK FOR CRYPTOCURRENCY USING BLOCKCHAIN
+
+This project aims to create a framework which can be used as a foundation for creating cryptocurrency systems. This framework would be providing all the facilities and functions that should be implemented while creating a cryptocurrency. The motive behind this project is to encourage the society to work on blockchain because this is a very new and potentially very strong technology and with this framework it would be a lot easier for people to work on projects where they can create new cryptocurrencies as all the necessary functions would already be provided by this framework.
+
+ Hardware requirements :  compatible for all platforms
+ software requirements :  xampp server
+ and IDE for python such as Visual Studio code, Anaconda, PyCharm Etc
+ any browser (Google Chrome preferred)
+ flask module for frontend GUI
