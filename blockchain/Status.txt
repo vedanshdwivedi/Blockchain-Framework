@@ -1,0 +1,11 @@
+Previously Complted Module Involves : 
+[+] Managing Transactions
+[+] Outstanding transactions (Unconfirmed transactions)
+[+] Mining Rewards
+
+Currently working on :
+[+] Revamping balance calculations
+[+] A BETTER user interface (UI based on CLI)
+
+
+Completion Status : 33.3%
