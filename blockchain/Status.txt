@@ -1,10 +1,7 @@
 Previously Complted Module Involves : 
-[+] Managing Transactions
-[+] Outstanding transactions (Unconfirmed transactions)
-[+] Mining Rewards
+[+] Revamping balance calculations
 
 Currently working on :
-[+] Revamping balance calculations
 [+] A BETTER user interface (UI based on CLI)
 
 
