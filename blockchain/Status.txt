@@ -1,8 +1,9 @@
 Previously Complted Module Involves : 
-[+] Revamping balance calculations
+[+] A BETTER user interface (UI based on CLI)
 
 Currently working on :
-[+] A BETTER user interface (UI based on CLI)
+[+] Adding a proof-of-work for mined blocks.
+[+] Generating a "real hash"
 
 
 Completion Status : 33.3%
