@@ -6,4 +6,4 @@ Currently working on :
 [+] Generating a "real hash"
 
 
-Completion Status : 33.3%
+Completion Status : 41.6%
