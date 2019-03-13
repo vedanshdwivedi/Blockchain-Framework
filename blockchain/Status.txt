@@ -1,9 +1,8 @@
 Previously Complted Module Involves : 
-[+] Adding a proof-of-work for mined blocks.
-[+] Generating a "real hash"
-
-Currently working on :
 [+] storing blockchain locally (using the concept of files)
 
+Currently working on :
+[+] ensuring save file access
 
-Completion Status : 50%
+
+Completion Status : 58.3%
