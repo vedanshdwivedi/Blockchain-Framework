@@ -1,6 +1,8 @@
 from functools import reduce
 import hashlib as hl
 from collections import OrderedDict
+import json
+import pickle
 
 # Import two functions from our hash_util.py file. Omit the ".py" in the import
 from hash_util import hash_string_256, hash_block
@@ -25,6 +27,57 @@ owner = 'Max'
 participants = {'Max'}
 
 
+
+def load_data():
+    """Initialize blockchain + open transactions data from a file."""
+    global blockchain
+    global open_transactions
+    with open('blockchain.txt', mode='r') as f:
+        # file_content = pickle.loads(f.read())
+        file_content = f.readlines()
+        # blockchain = file_content['chain']
+        # open_transactions = file_content['ot']
+        blockchain = json.loads(file_content[0][:-1])
+        # We need to convert  the loaded data because Transactions should use OrderedDict
+        updated_blockchain = []
+        for block in blockchain:
+            updated_block = {
+                'previous_hash': block['previous_hash'],
+                'index': block['index'],
+                'proof': block['proof'],
+                'transactions': [OrderedDict(
+                    [('sender', tx['sender']), ('recipient', tx['recipient']), ('amount', tx['amount'])]) for tx in block['transactions']]
+            }
+            updated_blockchain.append(updated_block)
+        blockchain = updated_blockchain
+        open_transactions = json.loads(file_content[1])
+        # We need to convert  the loaded data because Transactions should use OrderedDict
+        updated_transactions = []
+        for tx in open_transactions:
+            updated_transaction = OrderedDict(
+                [('sender', tx['sender']), ('recipient', tx['recipient']), ('amount', tx['amount'])])
+            updated_transactions.append(updated_transaction)
+        open_transactions = updated_transactions
+
+
+load_data()
+
+
+def save_data():
+    """Save blockchain + open transactions snapshot to a file."""
+    with open('blockchain.txt', mode='w') as f:
+        f.write(json.dumps(blockchain))
+        f.write('\n')
+        f.write(json.dumps(open_transactions))
+        # save_data = {
+        #     'chain': blockchain,
+        #     'ot': open_transactions
+        # }
+        # f.write(pickle.dumps(save_data))
+    print('Saving failed!')
+
+
+
 def valid_proof(transactions, last_hash, proof):
     """Validate a proof of work number and see if it solves the puzzle algorithm (two leading 0s)
 
@@ -35,6 +88,7 @@ def valid_proof(transactions, last_hash, proof):
     """
     # Create a string with all the hash inputs
     guess = (str(transactions) + str(last_hash) + str(proof)).encode()
+    print(guess)
     # Hash the string
     # IMPORTANT: This is NOT the same hash as will be stored in the previous_hash. It's a not a block's hash. It's only used for the proof-of-work algorithm.
     guess_hash = hash_string_256(guess)
@@ -123,6 +177,7 @@ def add_transaction(recipient, sender=owner, amount=1.0):
         open_transactions.append(transaction)
         participants.add(sender)
         participants.add(recipient)
+        save_data()
         return True
     return False
 
@@ -224,6 +279,7 @@ while waiting_for_input:
     elif user_choice == '2':
         if mine_block():
             open_transactions = []
+            save_data()
     elif user_choice == '3':
         print_blockchain_elements()
     elif user_choice == '4':

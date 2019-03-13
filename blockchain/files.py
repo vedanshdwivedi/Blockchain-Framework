@@ -1,0 +1,16 @@
+#does not belong to project, just a sandboxing file
+f = open('demo.txt', mode='r')
+data = f.read()
+f.close()
+print(data)
+f = open('demo.txt', mode='a')
+data = input("Enter text : ")
+data1 = data + str('\n')
+f.write(data1)
+f.close()
+f = open('demo.txt', mode='r')
+data = f.readlines()
+print(data)
+for d in data:
+    print(d[:-1])
+f.close()
