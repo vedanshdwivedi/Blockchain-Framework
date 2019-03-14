@@ -1,8 +1,8 @@
 Previously Complted Module Involves : 
-[+] storing blockchain locally (using the concept of files)
-
-Currently working on :
 [+] ensuring save file access
 
+Currently working on :
+[+] implement objects for cleaner structure
 
-Completion Status : 58.3%
+
+Completion Status : 66.6%
