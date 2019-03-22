@@ -16,8 +16,12 @@ bus1 = Bus(150)
 bus1.drive()
 name = input('Sawari ka naam kya hai be ??')
 bus1.add_passenger(name)
+
+name = input('Sawari ka naam kya hai be ??')
+bus1.add_passenger(name)
 bus1.add_warning('Laitrine h Passenger')
 bus1.show_warnings()
+print(bus1.__dict__)
 '''
 car2 = Car(200)
 car2.drive()
