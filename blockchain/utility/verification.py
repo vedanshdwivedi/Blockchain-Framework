@@ -1,4 +1,4 @@
-from hash_util import hash_string_256, hash_block
+from utility.hash_util import hash_string_256, hash_block
 
 class Verification:
     """A helper class which offer various static and class-based verification and validation methods."""
@@ -16,6 +16,7 @@ class Verification:
         # Hash the string
         # IMPORTANT: This is NOT the same hash as will be stored in the previous_hash. It's a not a block's hash. It's only used for the proof-of-work algorithm.
         guess_hash = hash_string_256(guess)
+        # print(guess_hash[0:10])
         # Only a hash (which is based on the above inputs) which starts with two 0s is treated as valid
         # This condition is of course defined by you. You could also require 10 leading 0s - this would take significantly longer (and this allows you to control the speed at which new blocks can be added)
         return guess_hash[0:2] == '00'
