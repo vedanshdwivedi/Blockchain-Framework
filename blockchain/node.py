@@ -84,5 +84,8 @@ class Node:
 
         print('Done!')
 
-node = Node()
-node.listen_for_input()
+"""The __name__ returns the process which called this file to execute. """
+
+if __name__ == '__main__':
+    node = Node()
+    node.listen_for_input()

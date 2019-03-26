@@ -1,3 +1,5 @@
+"""Provides Hashing Utility Functions"""
+
 import hashlib as hl
 import json
 
