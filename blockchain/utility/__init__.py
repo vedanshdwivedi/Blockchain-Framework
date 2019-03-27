@@ -1,1 +1,3 @@
-# existence of this file turns the contents of this file into a package
+from utility.hash_util import hash_string_256
+
+__all__ = ['hash_string_256']
