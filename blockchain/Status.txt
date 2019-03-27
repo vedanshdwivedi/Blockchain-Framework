@@ -1,8 +1,8 @@
 Previously Complted Module Involves : 
-[+] changed from procedural to object oriented approach
+[+] added a wallet
 
 Currently working on :
-[+] adding a basic wallet
+[+] Adding FRONTEND using FLASK
 
 
-Completion Status : 75%
+Completion Status : 85%
