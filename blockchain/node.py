@@ -14,6 +14,26 @@ CORS(app)
 def get_ui():
     return 'This Works Badhiya'
 
+@app.route('/mine', methods=['POST'])
+def mine():
+    chain_copy = blockchain.mine_block()
+    if chain_copy != None:
+        dict_chain = [block.__dict__.copy() for block in chain_copy]
+        for dict_block in dict_chain:
+            dict_block['transactions'] = [tx.__dict__ for tx in dict_block['transactions']]
+        response = {
+            'message': 'Adding a block failed!',
+            'block': dict_block
+        }
+        return jsonify(response), 201
+    else:
+        response = {
+            'message': 'Adding a block failed!',
+            'wallet_set_up': wallet.public_key != None
+        }
+        return jsonify(response), 500
+
+
 @app.route('/chain', methods=['GET'])
 def get_chain():
     chain_copy = blockchain.chain

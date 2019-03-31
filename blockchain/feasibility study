@@ -8,3 +8,4 @@ This project aims to create a framework which can be used as a foundation for cr
  [+] software requirements :  xampp server and IDE for python such as Visual Studio code, Anaconda, PyCharm Etc, pycrypto package
  [+] any browser (Google Chrome preferred)
  [+] flask module for frontend GUI
+ [+] Postman API for managing POST requests (optional)
