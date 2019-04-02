@@ -1,8 +1,8 @@
 Previously Complted Module Involves : 
-[+] added a wallet
-
-Currently working on :
 [+] Adding FRONTEND using FLASK
 
+Currently working on :
+[+] Adding a node network
 
-Completion Status : 85%
+
+Completion Status : 93%
