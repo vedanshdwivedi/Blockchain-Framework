@@ -1,8 +1,0 @@
-Previously Complted Module Involves : 
-[+] Adding FRONTEND using FLASK
-
-Currently working on :
-[+] Adding a node network
-
-
-Completion Status : 93%
