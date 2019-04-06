@@ -3,15 +3,17 @@
 from utility.hash_util import hash_string_256, hash_block
 from wallet import Wallet
 
+
 class Verification:
     """A helper class which offer various static and class-based verification and validation methods."""
     @staticmethod
     def valid_proof(transactions, last_hash, proof):
         """Validate a proof of work number and see if it solves the puzzle algorithm (two leading 0s)"""
-        guess = (str([tx.to_ordered_dict() for tx in transactions]) + str(last_hash) + str(proof)).encode()
+        guess = (str([tx.to_ordered_dict() for tx in transactions]
+                     ) + str(last_hash) + str(proof)).encode()
         guess_hash = hash_string_256(guess)
         return guess_hash[0:2] == '00'
-        
+
     @classmethod
     def verify_chain(cls, blockchain):
         """ Verify the current blockchain and return True if it's valid, False otherwise."""

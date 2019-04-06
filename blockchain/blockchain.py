@@ -125,7 +125,6 @@ class Blockchain:
             return None
         return self.__chain[-1]
 
-
     def add_transaction(self, recipient, sender, signature, amount=1.0, is_receiving=False):
         """ Append a new value as well as the last blockchain value to the blockchain."""
         transaction = Transaction(sender, recipient, signature, amount)
@@ -214,7 +213,7 @@ class Blockchain:
                 node_chain = response.json()
                 node_chain = [Block(block['index'], block['previous_hash'], [Transaction(
                     tx['sender'], tx['recipient'], tx['signature'], tx['amount']) for tx in block['transactions']],
-                                    block['proof'], block['timestamp']) for block in node_chain]
+                    block['proof'], block['timestamp']) for block in node_chain]
                 node_chain_length = len(node_chain)
                 local_chain_length = len(winner_chain)
                 if node_chain_length > local_chain_length and Verification.verify_chain(node_chain):
